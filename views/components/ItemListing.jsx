@@ -13,6 +13,11 @@ const Item = ({ artist }) => {
       <p>{artist.title}</p>
       <p>
         {artist.width} X {artist.height}
+        {artist.id}
+      </p>
+      <p>
+        {" "}
+        <a href={`/MAAR/${artist.id}`}>{artist.title}</a>
       </p>
       {/* <p>{artist.image} image</p> */}
       {/* <input
@@ -41,7 +46,7 @@ const ItemListing = (props) => (
         <fieldset>
           <Item key={i} index={i} artist={artist} />
           <legend>
-            {artist.firstName} {artist.lastName} Artist{" "}
+            {artist.artist.firstName} {artist.lastName} Artist{" "}
           </legend>
         </fieldset>
       ))}

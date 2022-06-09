@@ -1,7 +1,7 @@
 //const { response } = require("express");
 //const { request } = require("express");
 const res = require("express/lib/response");
-const path = require("path")
+const path = require("path");
 let dataObject = require("./projectModel");
 //const dataObject = require("./models/userModel");
 console.log(dataObject);
@@ -60,7 +60,7 @@ exports.createObject = async(req, response) => {
 
 exports.getSingleObject = async (request, response) => {
     //res.send('Viewing user ' + req.artist.name);
-       let getSingle = dataObject.findById(request.artist);
+     //  let getSingle = dataObject.findById(request.artist);
       // console.log("dataObject.findById(lov / 3b  }).
 //   then(customers => {
 //     console.log(customers[0].name); // 'A'
@@ -70,23 +70,24 @@ exports.getSingleObject = async (request, response) => {
 //     console.log(customers[0].name); // 'B'
 //   });
 
-    console.log(request.params.id);
+  //  console.log(request.params.id);
 
-    const displayObject = () => {
-
-    }
     //     return data.map(result => result = request.params);
     //   };
 
     try { const wunData = await dataObject.findById(request.params.id);
-         response.status(200).json({
-         status: "success",
+       wunData.id = request.params.id;
 
-         data: {
-             wunData: wunData.artist,
+       console.log(request.params.id);
+        response.render("IndexWun", { wunData });
+    //     response.status(200).json({
+    //      status: "success",
 
-         },
-     });
+    //      data: {
+    //          wunData: wunData,
+
+    //      },
+    //  });
      } catch(error){
          response.status(500).json({
          status: "fail",

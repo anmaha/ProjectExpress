@@ -123,8 +123,7 @@ const Index = ({ allData }) => (
     </head>
     <body>
       <Review></Review>
-      {/* <Footer /> */}
-      {console.log(allData)}
+
       <legend>
         <h1>William Hafer Studios</h1>
         <fieldset>
