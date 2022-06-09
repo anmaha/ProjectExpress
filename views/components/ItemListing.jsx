@@ -46,7 +46,7 @@ const ItemListing = (props) => (
         <fieldset>
           <Item key={i} index={i} artist={artist} />
           <legend>
-            {artist.artist.firstName} {artist.lastName} Artist{" "}
+            {artist.firstName} {artist.lastName} Artist{" "}
           </legend>
         </fieldset>
       ))}

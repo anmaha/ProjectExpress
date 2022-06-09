@@ -6,7 +6,7 @@ import Content from "./components/Content";
 //import ItemListing from "./components/ItemListing";
 //console.log(props)
 
-const ItemListing = (artist) => (
+const ItemListing = ({ artist }) => (
   // <div style={itemListingGridStyle} className="item-listing-grid">
   <div>
     {/* {props.allData &&
@@ -16,7 +16,13 @@ const ItemListing = (artist) => (
       <legend>
         {artist.firstName} {artist.lastName} Artist{" "}
       </legend>
-      <p>Hello keity</p>
+      <p>
+        {" "}
+        <p>
+          {" "}
+          <a href={`/MAAR/${artist.id}/update`}>{artist.title} Update</a>
+        </p>
+      </p>
     </fieldset>
     {/* ))} */}
   </div>
@@ -36,6 +42,7 @@ const IndexWun = ({ wunData }) => (
         <Content>
           <ItemListing name="This is a form fieldset widget" artist={wunData} />
         </Content>{" "}
+        <p></p>
       </fieldset>
     </body>
   </html>
