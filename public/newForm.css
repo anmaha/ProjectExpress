@@ -1,0 +1,76 @@
+body {
+    background-color: lightblue;
+    font-family: Programma, monospace;
+}
+
+h1 {
+    text-align: center;
+}
+.reset {
+    background-color: aliceblue;
+    border: 2pt solid navy;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+}
+
+.reset:hover {
+    background-color: beige;
+}
+
+.reset:active {
+    background-color: mistyrose;
+}
+
+form {
+    border: solid lightslategray;
+    background-color: rgba(240, 248, 255, 0.387);
+
+}
+
+fieldset {
+    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.387);
+
+    border: 2px solid navy;
+    border-radius: 0.5em;
+    float: none;
+    font-size: 125%;
+    margin: 0.25em;
+    text-align: center;
+}
+
+legend {
+    background-color: lightcyan;
+    /* //background-color: lavenderblush; */
+    border: 2px solid navy;
+    border-radius: 0.5em;
+    cursor: default;
+    font-size: 125%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+legend:hover {
+    background-color: whitesmoke;
+}
+fieldset:hover{
+    background-color: aliceblue;
+}
+
+input {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+input[value="success"]:hover {
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+
+input[value="failure"]:hover {
+    background-color: pink;
+    border: 2px solid red;
+}

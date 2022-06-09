@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New form Sample datalists</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/newForm.css">
+  <style>
+    body { padding-top: 50px; }
+  </style>
+    <script type="text/babel" src="./newForm.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>res.sendFile() Works!</h1>
+      <label for="ice-cream-choice">Choose a flavor:</label>
+      <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+      
+      <datalist id="ice-cream-flavors">
+          <option value="Chocolate">
+          <option value="Coconut">
+          <option value="Mint">
+          <option value="Strawberry">
+          <option value="Vanilla">
+      </datalist>
+      <input type="range" list="tickmarks">
+<datalist id="tickmarks">
+  <option value="0">
+  <option value="10">
+  <option value="20">
+  <option value="30">
+</datalist>
+<input type="color" list="redColors">
+<datalist id="redColors">
+  <option value="green">
+  <option value="blue">
+  <option value="yellow">
+  <option value="pink">
+</datalist>
+    </div>
+  </div>
+  <div id="demo">Div demo</div>
+  <div class="message"></div>
+        
+</body>
+<script>
+
+   const message = "Hello React vanilla javascript!";
+    // document.addEventListener("DOMContentLoaded", () => {
+      const mess = document.querySelector(".message");
+    mess.innerHTML =  message ;
+    // });
+    function widget(name) {
+    let demo = document.getElementById("demo");
+           let fieldset = document.createElement("fieldset");
+           let legend = document.createElement("legend");
+           let success = document.createElement("input");
+           let failure = document.createElement("input");
+           fieldset.appendChild(legend);
+           fieldset.appendChild(success);
+           fieldset.appendChild(failure);
+           legend.appendChild(document.createTextNode(name));
+           success.type = "button";
+           success.value = "success";
+           success.addEventListener(
+               "click",
+               function success_handler() {
+                   fieldset.style.backgroundColor = "lightgreen";
+                   return callback(result);
+               },
+               false
+           );
+           failure.type = "button";
+           failure.value = "failure";
+           failure.addEventListener(
+               "click",
+               function failure_handler() {
+                   fieldset.style.backgroundColor = "pink";
+                   return callback(undefined, result);
+               },
+               false
+           );
+           demo.appendChild(fieldset);
+           return function widget_cancel() {
+               fieldset.style.backgroundColor = "darkgray";
+           };
+       };
+     let view = new widget("View all entries");
+     
+    </script>
+</html>
