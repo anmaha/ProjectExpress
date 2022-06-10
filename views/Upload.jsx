@@ -38,7 +38,9 @@ const SubmissionForm = () => {
       <body>
         <form action="/MAAR" method="POST" onSubmit={handleSubmit}>
           <fieldset style={{ backgroundColor: formColor, display: "block" }}>
-            <legend>Submit new Artwork to the Database Form</legend>
+            <legend>
+              <a href="/MAAR/new"> Submit new Artwork to the Database Form </a>
+            </legend>
             <input
               type="text"
               name="firstName"

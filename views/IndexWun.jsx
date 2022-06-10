@@ -21,6 +21,7 @@ const ItemListing = ({ artist }) => (
         <p>
           {" "}
           <a href={`/MAAR/${artist.id}/update`}>{artist.title} Update</a>
+          <a href={`/MAAR/${artist.id}/`}>Delete this entry</a>
         </p>
       </p>
     </fieldset>
