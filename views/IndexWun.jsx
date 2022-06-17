@@ -18,10 +18,17 @@ const ItemListing = ({ artist }) => (
       </legend>
       <p>
         {" "}
+        Title: {artist.title}
+        <p>Year: {artist.year}</p>
         <p>
           {" "}
           <a href={`/MAAR/${artist.id}/update`}>{artist.title} Update</a>
-          <a href={`/MAAR/${artist.id}/`}>Delete this entry</a>
+          <p>
+            <a href={`/MAAR/${artist.id}/delete`}>Delete this entry</a>
+          </p>
+          <p>
+            <a href={`/MAAR/`}>Main MAAR</a>
+          </p>
         </p>
       </p>
     </fieldset>
@@ -38,7 +45,9 @@ const IndexWun = ({ wunData }) => (
     <body>
       <fieldset>
         <legend>the ARTwork entry</legend>
-        <p>{wunData.title}</p>
+        <p>
+          <h1>{wunData.title}</h1>
+        </p>
         <div> {console.log(wunData)}</div>
         <Content>
           <ItemListing name="This is a form fieldset widget" artist={wunData} />

@@ -5,19 +5,20 @@ const Item = ({ artist }) => {
   return (
     <>
       <p>
-        {artist.firstName} {artist.lastName} index:
-      </p>
-      <p>
         {artist.firstName} {artist.lastName}
       </p>
+      {/* <p>
+        {artist.firstName} {artist.lastName}
+      </p> */}
       <p>{artist.title}</p>
+      <p>{artist.year}</p>
+
       <p>
         {artist.width} X {artist.height}
-        {artist.id}
       </p>
       <p>
-        {" "}
-        <a href={`/MAAR/${artist.id}`}>{artist.title}</a>
+        {/* Index: {artist.id}{" "} */}
+        <a href={`/MAAR/${artist.id}`}>{artist.title || artist.id}</a>
       </p>
       {/* <p>{artist.image} image</p> */}
       {/* <input
@@ -46,7 +47,7 @@ const ItemListing = (props) => (
         <fieldset>
           <Item key={i} index={i} artist={artist} />
           <legend>
-            {artist.firstName} {artist.lastName} Artist{" "}
+            Artwork {artist.title} by {artist.firstName} {artist.lastName}
           </legend>
         </fieldset>
       ))}

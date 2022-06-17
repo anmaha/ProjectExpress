@@ -69,7 +69,8 @@ const SubmissionForm = () => {
     formColor = "pink";
   };
   // const myFieldSet = document.querySelector("fieldset");
-  // const myFieldSet = useRef(null);
+  //const myFieldSet = useRef(null);
+
   return (
     <>
       <form action="/MAAR" method="POST" onSubmit={handleSubmit}>

@@ -9,7 +9,7 @@ console.log(dataObject);
 
 exports.findAllObjects = async (request, response)=>{
    // console.log(dataObject.find());
-    console.log(request.body)
+   // console.log(request.body)
     let allData = await dataObject.find({});
     try{
     response.render("Index", { allData });
@@ -34,7 +34,7 @@ exports.findAllObjects = async (request, response)=>{
 };
 
 exports.createObject = async(req, response) => {
-    console.log("req body", req.body);
+   // console.log("req body", req.body);
 
     try{
     let newData = await dataObject.create(req.body);
@@ -79,6 +79,7 @@ exports.getSingleObject = async (request, response) => {
        wunData.id = request.params.id;
 
        console.log(request.params.id);
+       console.log(request.body);
         response.render("IndexWun", { wunData });
     //     response.status(200).json({
     //      status: "success",
@@ -92,23 +93,46 @@ exports.getSingleObject = async (request, response) => {
          response.status(500).json({
          status: "fail",
          data: {
-             message: "undefined routes"
+             message: "failed one data"
          }
      });
  };
- }
+ };
+
+ exports.updateForm = async (request, response) => {
+    //response.sendFile(path.join(__dirname, "./index.html"));
+     // const form = document.createElement("form");
+     const wunData = await dataObject.findById(request.params.id);
+       wunData.id = request.params.id;
+     try{
+     response.render("Edit", {wunData});
+   //  response.render("Upload", { databaseObject });
+     }catch(error){
+         response.status(500).json({
+             status: "fail",
+             data: {
+                 message: "Failed deleteObject"
+             }
+         });
+     };
+};
+
 
  exports.updateObject = async (request, response) => {
-     try {  const updateObject = await dataObject.findByIdAndUpdate(request.params.id, request.body, {new: true});
+     try {  
+         console.log("Got here");
+         console.log(request.body);
+         let updateObject = await dataObject.findByIdAndUpdate(request.params.id, request.body);
 
          response.status(200).json({
          status: "success updateObject",
 
          data: {
-             updateObject: this.updateObject,
+             updateObject: updateObject,
 
          },
      });
+     // enumStates
      } catch(error){
          response.status(500).json({
          status: "fail",
@@ -125,16 +149,17 @@ exports.getSingleObject = async (request, response) => {
      try {
          let delData = await dataObject.findById(request.params.id)
          await dataObject.findByIdAndDelete(request.params.id,)
+        
+         response.redirect("/MAAR");
+        //  response.status(200).json({
+        //  status: "success",
 
-         response.status(200).json({
-         status: "success",
+        //  data: {
+        //     deletedData : delData,
+        //     message: "passed deleteObject Entry Deleted"
 
-         data: {
-            deletedData : delData,
-            message: "passed deleteObject Entry Deleted"
-
-         },
-     });
+        //  },
+    
      } catch(error){
          response.status(500).json({
          status: "fail",
